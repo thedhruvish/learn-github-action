@@ -4,26 +4,49 @@ on:
   - workflow_dispatch
 
 jobs:
-  Test:
+  #   Test:
+  #     runs-on: ubuntu-latest
+
+  #     steps:
+  #       - name: "Get list dir"
+  #         run: ls -a
+  #       - name: "Get Memory"
+  #         run: free -h
+  #       - name: "Get Ram"
+  #         run: vmstat -s
+  #       - name: mkdir
+  #         run: mkdir my-test
+  #       - name: "Get list dir"
+  #         run: ls -a
+
+  #   CloneRepo:
+  #     runs-on: ubuntu-latest
+
+  #     steps:
+  #       - name: "Clone repo"
+  #         uses: actions/checkout@v6
+  #       - name: "Get list dir"
+  #         run: ls -a
+  Var:
+    env:
+      A2B: "new server"
     runs-on: ubuntu-latest
 
     steps:
-      - name: "Get list dir"
-        run: ls -a
-      - name: "Get Memory"
-        run: free -h
-      - name: "Get Ram"
-        run: vmstat -s
-      - name: mkdir
-        run: mkdir my-test
-      - name: "Get list dir"
-        run: ls -a
+      - name: "Var"
+        run: echo "${{ true }}"
+      - name: "print env"
+        run: echo "${{ env.A2B }}"
+      - name: "multi command"
+        run: |
+          echo test
+          echo 5<2
 
-  CloneRepo:
+  Other:
     runs-on: ubuntu-latest
-
+    # environment: production
     steps:
-      - name: "Clone repo"
-        uses: actions/checkout@v6
-      - name: "Get list dir"
-        run: ls -a
+      - name: test
+        run: echo "dhruvish"
+      - name: "PRINT secrets"
+        run: echo "${{ secrets.MY_NAME }}"
