@@ -39,7 +39,7 @@ jobs:
         run: echo "${{ env.A2B }}"
       - name: "multi command"
         run: |
-          echo test
+          echo "test"
           echo 5<2
 
   Other:
