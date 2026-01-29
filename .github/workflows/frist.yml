@@ -13,8 +13,8 @@ jobs:
       - name: "Get Memory"
         run: free -h
       - name: "Get Ram"
-        run: top
-      - name: "mkdir"
+        run: vmstat -s
+      - name: mkdir
         run: mkdir my-test
       - name: "Get list dir"
         run: ls -a
