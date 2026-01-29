@@ -40,7 +40,7 @@ jobs:
       - name: "multi command"
         run: |
           echo "test"
-          echo 5<2
+          ls -a
 
   Other:
     runs-on: ubuntu-latest
